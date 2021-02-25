@@ -1,13 +1,26 @@
-<nav class="header-utils">
-  <ul>
-    <li class="user">
-      <span class="username user-link">My Account</span>
-      <ul class="user-menu <%= accountType %>">
-        <li class="username"><span>My Account</span></li>
-        <li class="edit-profile"><a href="<%= accountCenterURL %>editprofile">Edit Profile</a></li>
-        <li class="newsletters"><a href="/newsletters">Newsletters</a></li>
-        <li class="logout"><a href="#">Log Out</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>ST Experiments</title>
+  <meta name="description" content="ST Experiments">
+</head>
+
+<body>
+  <nav class="header-utils">
+    <ul>
+      <li class="user">
+        <span class="username user-link">My Account</span>
+        <ul class="user-menu <%= accountType %>">
+          <li class="username"><span>My Account</span></li>
+          <li class="edit-profile"><a href="<%= accountCenterURL %>editprofile">Edit Profile</a></li>
+          <li class="newsletters"><a href="/newsletters">Newsletters</a></li>
+          <li class="logout"><a href="#">Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</body>
+
+</html>
