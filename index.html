@@ -1,1 +1,37 @@
-<h1>Initial Setup.</h1>
+<ul>
+
+  <% if ( loggedIn ) { %>
+    <li class="user">
+      <span class="username user-link">My Account</span>
+
+      <ul class="user-menu <%= accountType %>">
+
+        <li class="username"><span>My Account</span></li>
+        <li class="edit-profile"><a href="<%= accountCenterURL %>editprofile">Edit Profile</a></li>
+
+        <% if ( accountType=="nonDigitalSubAcct" || accountType=="digitalSubAcct" ) { %>
+          <li class="subscriptions"><a href="<%= accountCenterURL %>managesubscriptions">Manage Subscriptions</a></li>
+          <% } %>
+
+            <li class="newsletters"><a href="/newsletters">Newsletters</a></li>
+
+            <% if ( accountType !="commenterAcct" && accountType !="formerAcct" && accountType !="noAcct" ) { %>
+              <li class="historicalarchive event-link"><a data-action="archiveView"
+                  href="<%= accountCenterURL %>historicalarchives">Newspaper Archive</a></li>
+              <% } %>
+
+                <li class="logout"><a href="#">Log Out</a></li>
+
+      </ul>
+    </li>
+
+    <% } else { %>
+      <li class="login user-link"><a href="<%= accountCenterURL %>" class="st-return">Log In</a></li>
+      <% } %>
+
+        <% if ( accountType=="commenterAcct" || accountType=="noAcct" || accountType=="formerAcct" ) { %>
+          <li class="subscribe user-link"><a href="/subscribe/signup-offers/?subsource=voluntary"
+              class="st-return">Subscribe</a></li>
+          <% } %>
+
+</ul>
